@@ -49,7 +49,7 @@ func main() {
 	}
 
 	if configs.Value == "" {
-		log.Warnf("The value of environment variable (%s) is empty", configs.Value)
+		log.Warnf("The value is empty")
 		fmt.Println()
 	}
 
