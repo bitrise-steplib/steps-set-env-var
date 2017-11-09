@@ -81,6 +81,8 @@ workflows:
             go get -u -v github.com/kisielk/errcheck
             go get -u -v github.com/golang/lint/golint
 
+  # ----------------------------------------------------------------
+  # --- Utility workflows
   deps-update:
     title: Update the locked versions of all dependencies
     steps:
@@ -92,6 +94,25 @@ workflows:
 
             go get -u -v github.com/golang/dep/cmd/dep
             dep ensure -update -v
+
+  # ----------------------------------------------------------------
+  # --- workflows for Releasing
+  create-release:
+    title: Create Release version
+    steps:
+    - script:
+        title: Create CHANGELOG and git release
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+
+            go get github.com/bitrise-tools/releaseman
+
+            export CI=true
+
+            releaseman create-changelog \
+              --version $STEP_VERSION
 
   # ----------------------------------------------------------------
   # --- workflows to Share this step into a Step Library
