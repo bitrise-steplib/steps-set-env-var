@@ -24,7 +24,7 @@ toolkit:
 inputs:
   - value:
     opts:
-      title: "Value for copy into Envirhnment variables"
+      title: "Value for copy into Environment variables"
       summary: "Value for copy into Environment variables"
       description: |
         The value will be copied into the destination environment variables.
