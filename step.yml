@@ -1,9 +1,23 @@
 title: |-
-  Set environment variable
+  Set Environment Variable
 summary: |
-  Set environment variable
-description: |
-  With this step you can copy a value into as many environment variables as you like.
+  Set a value for one or more Environment Variables.
+description: |-
+  With this Step, you can set the same value for as many Environment Variables (Env Vars) as you like. Subsequent Steps in your Workflow can use these Env Vars.
+
+  You can create new Env Vars with this Step and you can also update existing Env Vars with a new value.
+
+  ### Configuring the Step 
+
+  1. In the **Value for copy into Environment Variables** input, set the value that you want for your Env Vars.
+  1. In the **Destination Environment Variables** input, add the keys for the Env Vars that you want to set. 
+  
+     For example, MY_ENV_VAR. You can add multiple Env Var keys by separating them with a space. Do not add the $ sign in front of the key! 
+
+  ### Useful links
+
+  [Environment Variables](https://devcenter.bitrise.io/en/builds/environment-variables.html)
+  [Available Environment Variables](https://devcenter.bitrise.io/en/references/available-environment-variables.html)
 website: https://github.com/bitrise-steplib/steps-set-env-var
 source_code_url: https://github.com/bitrise-steplib/steps-set-env-var
 support_url: https://github.com/bitrise-steplib/steps-set-env-var/issues
@@ -24,22 +38,20 @@ toolkit:
 inputs:
   - value:
     opts:
-      title: "Value for copy into Environment variables"
-      summary: "Value for copy into Environment variables"
+      title: "The new value of the destination Environment Variables"
+      summary: "The new value of the destination Environment variables"
       description: |
-        The value will be copied into the destination environment variables.
+        The value will be copied into the destination Environment Variables.
       is_expand: true
       is_required: false
       value_options: []
   - destination_keys:
     opts:
-      title: "Destination Environment variables"
-      summary:  "Destination Environment variables"
+      title: "Destination Environment Variables"
+      summary:  "Destination Environment Variables"
       description: |
-        Space separated list of the keys of the destination environment variables.
-        The value will be copied into these environment variables.
-
-        `envman add --key [destination_key] --value [value]`
+       List of the keys of the destination Environment Variables. If you want to include multiple keys, separate them with a space.
+        The value will be copied into these Environment Variables.
       is_expand: true
       is_required: true
       value_options: []
