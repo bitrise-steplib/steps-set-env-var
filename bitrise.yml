@@ -79,7 +79,7 @@ workflows:
             set -x
 
             go get -u -v github.com/kisielk/errcheck
-            go get -u -v golang.org/x/lint
+            go get -u -v golang.org/x/lint/golint
 
   # ----------------------------------------------------------------
   # --- Utility workflows
