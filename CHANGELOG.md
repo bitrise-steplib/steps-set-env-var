@@ -1,4 +1,11 @@
-## Changelog (Current version: 0.9.1)
+## Changelog (Current version: 2)
+
+
+### 0.9.2 (2022 March 14)
+
+* Add explicit vendoring
+* Download proper dependency
+* Tidy `go.mod`
 
 -----------------
 
